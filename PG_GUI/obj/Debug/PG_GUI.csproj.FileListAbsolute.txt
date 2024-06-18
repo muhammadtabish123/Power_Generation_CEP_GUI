@@ -1,0 +1,16 @@
+E:\visualStudioprojects\PG_GUI\bin\Debug\PG_GUI.exe.config
+E:\visualStudioprojects\PG_GUI\bin\Debug\PG_GUI.exe
+E:\visualStudioprojects\PG_GUI\bin\Debug\PG_GUI.pdb
+E:\visualStudioprojects\PG_GUI\obj\Debug\PG_GUI.csproj.AssemblyReference.cache
+E:\visualStudioprojects\PG_GUI\obj\Debug\PG_GUI.Form1.resources
+E:\visualStudioprojects\PG_GUI\obj\Debug\PG_GUI.Properties.Resources.resources
+E:\visualStudioprojects\PG_GUI\obj\Debug\PG_GUI.csproj.GenerateResource.cache
+E:\visualStudioprojects\PG_GUI\obj\Debug\PG_GUI.csproj.CoreCompileInputs.cache
+E:\visualStudioprojects\PG_GUI\obj\Debug\PG_GUI.exe
+E:\visualStudioprojects\PG_GUI\obj\Debug\PG_GUI.pdb
+E:\visualStudioprojects\PG_GUI\obj\Debug\PG_GUI.Forms.FormProduct.resources
+E:\visualStudioprojects\PG_GUI\obj\Debug\PG_GUI.Forms.FormCustomers.resources
+E:\visualStudioprojects\PG_GUI\obj\Debug\PG_GUI.Forms.FormNotifications.resources
+E:\visualStudioprojects\PG_GUI\obj\Debug\PG_GUI.Forms.FormOrders.resources
+E:\visualStudioprojects\PG_GUI\obj\Debug\PG_GUI.Forms.FormReporting.resources
+E:\visualStudioprojects\PG_GUI\obj\Debug\PG_GUI.Forms.FormSetting.resources
