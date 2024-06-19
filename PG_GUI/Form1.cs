@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using ExcelDataReader;
 
 namespace PG_GUI
 {
@@ -17,6 +18,7 @@ namespace PG_GUI
         private Random random;
         private int tempIndex;
         private Form activeForm;
+        private List<(float Duration, double Load)> loadDurationCurve;
 
         public Form1()
         {
@@ -26,8 +28,32 @@ namespace PG_GUI
             this.Text = string.Empty;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            // Associate the MouseDown event with the panelTitleBar
             this.panelTitleBar.MouseDown += new MouseEventHandler(this.panelTitleBar_MouseDown);
+
+            // Initialize the list
+            loadDurationCurve = new List<(float, double)>();
+            // Load Excel data
+           // var excelData = LoadExcelData("C:\\Users\\Admin\\Desktop\\load_profile.xlsx");
+            var excelData = LoadExcelData("C:\\Users\\Admin\\Documents\\GitHub\\Power_Generation_CEP_GUI\\PG_GUI\\load_profile.xlsx");
+
+        // Convert to array if needed
+        var dataArray = excelData.ToArray();
+           
+            // Example: Printing the data to the console
+            foreach (var dataPoint in dataArray)
+            {
+                Console.WriteLine($"{dataPoint.Key}: {dataPoint.Value}");
+                float duration = ProcessTimeInterval(dataPoint.Key);
+                loadDurationCurve.Add((duration, dataPoint.Value));
+            }
+
+            // Optionally, print the load duration curve
+            foreach (var item in loadDurationCurve)
+            {
+                Console.WriteLine($"Duration: {item.Duration}, Load: {item.Load}");
+            }
+
+
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -40,6 +66,7 @@ namespace PG_GUI
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
         // Methods
         private Color SelectThemeColor()
         {
@@ -191,5 +218,100 @@ namespace PG_GUI
         private void pictureBox1_Click(object sender, EventArgs e)
         {
         }
+
+        // Method for loading Excel data into a list of key-value pairs
+        /*private List<KeyValuePair<string, double>> LoadExcelData(string filePath)
+        {
+            List<KeyValuePair<string, double>> data = new List<KeyValuePair<string, double>>();
+
+            try
+            {
+                using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
+                {
+                    using (var reader = ExcelReaderFactory.CreateReader(stream))
+                    {
+                        var result = reader.AsDataSet();
+                        var dataTable = result.Tables[0];
+
+                        foreach (DataRow row in dataTable.Rows)
+                        {
+                            string timeInterval = row[0].ToString();
+                            double load = Convert.ToDouble(row[1]);
+                            data.Add(new KeyValuePair<string, double>(timeInterval, load));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error reading Excel file: {ex.Message}");
+            }
+
+            return data;
+        }*/
+        private Dictionary<string, double> LoadExcelData(string filePath)
+        {
+            var data = new Dictionary<string, double>();
+
+            try
+            {
+                using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
+                {
+                    using (var reader = ExcelReaderFactory.CreateReader(stream))
+                    {
+                        while (reader.Read())
+                        {
+                            try
+                            {
+                                string key = reader.GetString(0);
+                                double value = reader.GetDouble(1);
+                                data.Add(key, value);
+
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($"Error reading row {reader.Depth + 1}: {ex.Message}");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error reading Excel file: {ex.Message}");
+            }
+
+            return data;
+        }
+
+        private float ProcessTimeInterval(string timeInterval)
+        {
+            string pattern = @"(\d{1,2}):(\d{2}) (AM|PM)";
+            MatchCollection matches = Regex.Matches(timeInterval, pattern);
+
+            if (matches.Count == 2)
+            {
+                int startHour = int.Parse(matches[0].Groups[1].Value);
+                int startMinute = int.Parse(matches[0].Groups[2].Value);
+                int endHour = int.Parse(matches[1].Groups[1].Value);
+                int endMinute = int.Parse(matches[1].Groups[2].Value);
+
+                float differenceHours = Math.Abs(startHour - endHour);
+                float differenceMinutes = Math.Abs((startMinute - endMinute) / 60.0f);
+                float totalDifference = differenceHours + differenceMinutes;
+
+                Console.WriteLine($"Time Interval: {timeInterval}");
+                Console.WriteLine($"Difference in hours: {totalDifference}");
+                return totalDifference;
+            }
+            else
+            {
+                Console.WriteLine("Invalid time interval format.");
+                return -1.0f;
+            }
+        }
+
+
+
     }
 }
