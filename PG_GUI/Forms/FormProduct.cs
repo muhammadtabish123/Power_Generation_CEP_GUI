@@ -13,37 +13,34 @@ namespace PG_GUI.Forms
     public partial class FormProduct : Form
     {
         private List<(float Duration, double Load)> loadDurationCurve;
+        private float connected_load = 1700.0f;
+        private float max_demand, demand_factor, average_load, load_factor, plant_capacity, plant_capacity_factor;
 
-        // Modify constructor to accept data
+
+        // Constructor to initialize form and load data
         public FormProduct(List<(float Duration, double Load)> loadDurationCurve)
         {
             InitializeComponent();
-            this.loadDurationCurve = loadDurationCurve;
+            this.loadDurationCurve = loadDurationCurve; // Initialize the list
 
-            // Load Excel data
-            var excelData = LoadExcelData("C:\\Users\\Admin\\Documents\\GitHub\\Power_Generation_CEP_GUI\\PG_GUI\\load_profile.xlsx");
-
-            // Convert to array if needed
-            var dataArray = excelData.ToArray();
-
-            // Example: Printing the data to the console
-            foreach (var dataPoint in dataArray)
+            // Load Excel data if not already loaded
+            if (loadDurationCurve.Count == 0)
             {
-                Console.WriteLine($"{dataPoint.Key}: {dataPoint.Value}");
-                float duration = ProcessTimeInterval(dataPoint.Key);
-                loadDurationCurve.Add((duration, dataPoint.Value));
+                var excelData = LoadExcelData("C:\\Users\\Admin\\Documents\\GitHub\\Power_Generation_CEP_GUI\\PG_GUI\\load_profile.xlsx");
+                var dataArray = excelData.ToArray();
+
+                foreach (var dataPoint in dataArray)
+                {
+                    float duration = ProcessTimeInterval(dataPoint.Key);
+                    loadDurationCurve.Add((duration, dataPoint.Value));
+                }
+
+                // Sort the loadDurationCurve by load in descending order initially
+                loadDurationCurve = loadDurationCurve.OrderByDescending(item => item.Load).ToList();
             }
+            
 
-            /*// Optionally, print the load duration curve
-            foreach (var item in loadDurationCurve)
-            {
-                Console.WriteLine($"Duration: {item.Duration}, Load: {item.Load}");
-            }*/
-
-            // Sort the loadDurationCurve by load in ascending order
-            loadDurationCurve = loadDurationCurve.OrderByDescending(item => item.Load).ToList();
-
-            // Print the sorted load duration curve
+            // Print the sorted load duration curve (for debugging)
             foreach (var item in loadDurationCurve)
             {
                 Console.WriteLine($"Duration: {item.Duration}, Load: {item.Load}");
@@ -83,11 +80,6 @@ namespace PG_GUI.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            loadDurationCurve = loadDurationCurve.OrderByDescending(item => item.Load).ToList();
-            foreach (var item in loadDurationCurve)
-            {
-                Console.WriteLine($"Duration: {item.Duration}, Load: {item.Load}");
-            }
             // Clear existing series points to avoid overlapping data
             chart1.Series.Clear();
 
@@ -97,6 +89,13 @@ namespace PG_GUI.Forms
 
             // Initialize cumulative duration
             float cumulativeDuration = 0.0f;
+
+            // Ensure sorting happens only once
+           
+                // Sort the loadDurationCurve by load in descending order
+                loadDurationCurve = loadDurationCurve.OrderByDescending(item => item.Load).ToList();
+               
+
             // Add points to the series from loadDurationCurve
             foreach (var item in loadDurationCurve)
             {
@@ -104,6 +103,7 @@ namespace PG_GUI.Forms
                 cumulativeDuration += item.Duration;
                 timeDurationCurveSeries.Points.AddXY((int)cumulativeDuration, item.Load);
             }
+
             // Add the series to the chart
             chart1.Series.Add(timeDurationCurveSeries);
 
@@ -182,9 +182,53 @@ namespace PG_GUI.Forms
         {
             // Handle button click event
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            // Calculate connected load
+            //connected_load = (float)loadDurationCurve.Sum(item => item.Load);
+            //connected_load;
+            // Calculate max demand
+            max_demand = (float)loadDurationCurve.Max(item => item.Load);
+
+            // Calculate demand factor
+            demand_factor = max_demand / connected_load;
+
+            // Calculate average load
+            average_load = (float)loadDurationCurve.Average(item => item.Load);
+
+            // Calculate load factor
+            load_factor = average_load / max_demand;
+
+            // Calculate plant capacity (assuming 80% factor as an example)
+            plant_capacity = max_demand / 0.8f;
+
+            // Calculate plant capacity factor
+            plant_capacity_factor = connected_load / plant_capacity;
+
+            /*// Display results in TextBoxes
+            textBoxLoadFactor.Text = load_factor.ToString();
+            textBoxDemandFactor.Text = demand_factor.ToString();
+            textBoxPlantCapacity.Text = plant_capacity.ToString();
+            textBoxPlantCapacityFactor.Text = plant_capacity_factor.ToString();*/
+
+            // Print results to console
+            Console.WriteLine("Calculation Results:");
+            Console.WriteLine($"Connected Load: {connected_load}");
+            Console.WriteLine($"Max Demand: {max_demand}");
+            Console.WriteLine($"Demand Factor: {demand_factor}");
+            Console.WriteLine($"Average Load: {average_load}");
+            Console.WriteLine($"Load Factor: {load_factor}");
+            Console.WriteLine($"Plant Capacity: {plant_capacity}");
+            Console.WriteLine($"Plant Capacity Factor: {plant_capacity_factor}");
+        }
     }
 }
-
 
 
 /*
