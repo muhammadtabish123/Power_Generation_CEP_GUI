@@ -7,7 +7,6 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using ExcelDataReader;
 
 namespace PG_GUI
@@ -32,13 +31,13 @@ namespace PG_GUI
 
             // Initialize the list
             loadDurationCurve = new List<(float, double)>();
+
             // Load Excel data
-           // var excelData = LoadExcelData("C:\\Users\\Admin\\Desktop\\load_profile.xlsx");
             var excelData = LoadExcelData("C:\\Users\\Admin\\Documents\\GitHub\\Power_Generation_CEP_GUI\\PG_GUI\\load_profile.xlsx");
 
-        // Convert to array if needed
-        var dataArray = excelData.ToArray();
-           
+            // Convert to array if needed
+            var dataArray = excelData.ToArray();
+
             // Example: Printing the data to the console
             foreach (var dataPoint in dataArray)
             {
@@ -52,8 +51,6 @@ namespace PG_GUI
             {
                 Console.WriteLine($"Duration: {item.Duration}, Load: {item.Load}");
             }
-
-
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -67,7 +64,6 @@ namespace PG_GUI
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        // Methods
         private Color SelectThemeColor()
         {
             int index = random.Next(ThemeColor.ColorList.Count);
@@ -136,7 +132,8 @@ namespace PG_GUI
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormProduct(), sender);
+            // Pass loadDurationCurve when creating FormProduct
+            OpenChildForm(new Forms.FormProduct(loadDurationCurve), sender);
         }
 
         private void btnOrders_Click(object sender, EventArgs e)
@@ -219,36 +216,6 @@ namespace PG_GUI
         {
         }
 
-        // Method for loading Excel data into a list of key-value pairs
-        /*private List<KeyValuePair<string, double>> LoadExcelData(string filePath)
-        {
-            List<KeyValuePair<string, double>> data = new List<KeyValuePair<string, double>>();
-
-            try
-            {
-                using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
-                {
-                    using (var reader = ExcelReaderFactory.CreateReader(stream))
-                    {
-                        var result = reader.AsDataSet();
-                        var dataTable = result.Tables[0];
-
-                        foreach (DataRow row in dataTable.Rows)
-                        {
-                            string timeInterval = row[0].ToString();
-                            double load = Convert.ToDouble(row[1]);
-                            data.Add(new KeyValuePair<string, double>(timeInterval, load));
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error reading Excel file: {ex.Message}");
-            }
-
-            return data;
-        }*/
         private Dictionary<string, double> LoadExcelData(string filePath)
         {
             var data = new Dictionary<string, double>();
@@ -310,8 +277,5 @@ namespace PG_GUI
                 return -1.0f;
             }
         }
-
-
-
     }
 }
