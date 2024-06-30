@@ -17,6 +17,7 @@ namespace PG_GUI.Forms
             InitializeComponent();
             this.loadDurationCurve = loadDurationCurve;
 
+
             // Optionally, print the load duration curve
             foreach (var item in loadDurationCurve)
             {
@@ -57,12 +58,34 @@ namespace PG_GUI.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int x = 6, y = 9;
-            // Create a new chart series for voltage regulation
-            Series voltageRegulationSeries = new Series("Voltage Regulation");
-            //voltageRegulationSeries.Points.Add(x);
-            voltageRegulationSeries.Points.AddXY(x, y);
-            chart1.Series.Add(voltageRegulationSeries);
+            // Clear existing series points to avoid overlapping data
+            chart1.Series.Clear();
+             // Initialize cumulative duration
+
+            // Create a new chart series for the load duration curve
+            Series timeDurationCurveSeries = new Series("Voltage Regulation");
+            timeDurationCurveSeries.ChartType = SeriesChartType.Spline; // Set the chart type to Bar
+            // Initialize cumulative duration
+            float cumulativeDuration = 0.0f;
+
+            // Add points to the series from loadDurationCurve
+            foreach (var item in loadDurationCurve)
+            {
+                // Add cumulative duration to the current duration
+                cumulativeDuration += item.Duration;
+                timeDurationCurveSeries.Points.AddXY((int)cumulativeDuration, item.Load);
+               // timeDurationCurveSeries.Points.Add(item.Load);
+               
+            }
+
+            // Add the series to the chart
+            chart1.Series.Add(timeDurationCurveSeries);
+
+            // Optionally, set chart properties
+            chart1.ChartAreas[0].AxisX.Title = "Duration (hours)";
+            chart1.ChartAreas[0].AxisY.Title = "Load (kW)";
+            chart1.ChartAreas[0].RecalculateAxesScale();
+
             // Update the chart
             chart1.Update();
         }
@@ -93,5 +116,39 @@ namespace PG_GUI.Forms
                 return -1.0f;
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
+
+/*
+Duration: 0.8333333, Load: 1110
+Duration: 2.833333, Load: 210
+
+Duration: 2, Load: 270
+Duration: 2, Load: 250
+Duration: 3, Load: 330
+Duration: 1, Load: 360
+Duration: 3, Load: 300
+Duration: 0.3333333, Load: 1590
+Duration: 1.333333, Load: 650
+Duration: 2, Load: 270
+
+
+desire output must be 
+Duration: 0.3333333, Load: 1590
+Duration: 0.8333333, Load: 1110
+Duration: 2, Load: 1210
+Duration: 1.333333, Load: 650
+Duration: 1, Load: 360
+Duration: 3, Load: 330
+Duration: 3, Load: 300
+Duration: 2, Load: 270
+Duration: 2, Load: 270
+Duration: 2, Load: 250
+Duration: 2.833333, Load: 210
+*/

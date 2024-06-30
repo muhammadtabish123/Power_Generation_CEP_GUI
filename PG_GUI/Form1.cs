@@ -51,6 +51,14 @@ namespace PG_GUI
             {
                 Console.WriteLine($"Duration: {item.Duration}, Load: {item.Load}");
             }
+            // Sort the loadDurationCurve by load in descending order
+            loadDurationCurve = loadDurationCurve.OrderByDescending(item => item.Load).ToList();
+
+            // Optionally, print the sorted load duration curve
+            foreach (var item in loadDurationCurve)
+            {
+                Console.WriteLine($"Duration: {item.Duration}, Load: {item.Load}");
+            }
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
