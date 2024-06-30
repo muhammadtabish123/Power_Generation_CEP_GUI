@@ -4,6 +4,9 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Windows.Forms.DataVisualization.Charting;
+using ExcelDataReader;
+using System.IO;
+using System.Linq;
 
 namespace PG_GUI.Forms
 {
@@ -17,8 +20,30 @@ namespace PG_GUI.Forms
             InitializeComponent();
             this.loadDurationCurve = loadDurationCurve;
 
+            // Load Excel data
+            var excelData = LoadExcelData("C:\\Users\\Admin\\Documents\\GitHub\\Power_Generation_CEP_GUI\\PG_GUI\\load_profile.xlsx");
 
-            // Optionally, print the load duration curve
+            // Convert to array if needed
+            var dataArray = excelData.ToArray();
+
+            // Example: Printing the data to the console
+            foreach (var dataPoint in dataArray)
+            {
+                Console.WriteLine($"{dataPoint.Key}: {dataPoint.Value}");
+                float duration = ProcessTimeInterval(dataPoint.Key);
+                loadDurationCurve.Add((duration, dataPoint.Value));
+            }
+
+            /*// Optionally, print the load duration curve
+            foreach (var item in loadDurationCurve)
+            {
+                Console.WriteLine($"Duration: {item.Duration}, Load: {item.Load}");
+            }*/
+
+            // Sort the loadDurationCurve by load in ascending order
+            loadDurationCurve = loadDurationCurve.OrderByDescending(item => item.Load).ToList();
+
+            // Print the sorted load duration curve
             foreach (var item in loadDurationCurve)
             {
                 Console.WriteLine($"Duration: {item.Duration}, Load: {item.Load}");
@@ -27,7 +52,7 @@ namespace PG_GUI.Forms
 
         private void label4_Click(object sender, EventArgs e)
         {
-
+            // Handle label click event
         }
 
         private void FormProduct_Load(object sender, EventArgs e)
@@ -53,31 +78,32 @@ namespace PG_GUI.Forms
 
         private void chart1_Click(object sender, EventArgs e)
         {
-
+            // Handle chart click event
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            loadDurationCurve = loadDurationCurve.OrderByDescending(item => item.Load).ToList();
+            foreach (var item in loadDurationCurve)
+            {
+                Console.WriteLine($"Duration: {item.Duration}, Load: {item.Load}");
+            }
             // Clear existing series points to avoid overlapping data
             chart1.Series.Clear();
-             // Initialize cumulative duration
 
             // Create a new chart series for the load duration curve
             Series timeDurationCurveSeries = new Series("Voltage Regulation");
-            timeDurationCurveSeries.ChartType = SeriesChartType.Spline; // Set the chart type to Bar
+            timeDurationCurveSeries.ChartType = SeriesChartType.Spline; // Set the chart type to Spline
+
             // Initialize cumulative duration
             float cumulativeDuration = 0.0f;
-
             // Add points to the series from loadDurationCurve
             foreach (var item in loadDurationCurve)
             {
                 // Add cumulative duration to the current duration
                 cumulativeDuration += item.Duration;
                 timeDurationCurveSeries.Points.AddXY((int)cumulativeDuration, item.Load);
-               // timeDurationCurveSeries.Points.Add(item.Load);
-               
             }
-
             // Add the series to the chart
             chart1.Series.Add(timeDurationCurveSeries);
 
@@ -117,12 +143,48 @@ namespace PG_GUI.Forms
             }
         }
 
+        // Method to load Excel data
+        private Dictionary<string, double> LoadExcelData(string filePath)
+        {
+            var data = new Dictionary<string, double>();
+
+            try
+            {
+                using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
+                {
+                    using (var reader = ExcelReaderFactory.CreateReader(stream))
+                    {
+                        while (reader.Read())
+                        {
+                            try
+                            {
+                                string key = reader.GetString(0);
+                                double value = reader.GetDouble(1);
+                                data.Add(key, value);
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($"Error reading row {reader.Depth + 1}: {ex.Message}");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error reading Excel file: {ex.Message}");
+            }
+
+            return data;
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-
+            // Handle button click event
         }
     }
 }
+
 
 
 /*

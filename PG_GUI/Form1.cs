@@ -32,13 +32,13 @@ namespace PG_GUI
             // Initialize the list
             loadDurationCurve = new List<(float, double)>();
 
-            // Load Excel data
+          /*  // Load Excel data
             var excelData = LoadExcelData("C:\\Users\\Admin\\Documents\\GitHub\\Power_Generation_CEP_GUI\\PG_GUI\\load_profile.xlsx");
 
             // Convert to array if needed
             var dataArray = excelData.ToArray();
 
-            // Example: Printing the data to the console
+           // Example: Printing the data to the console
             foreach (var dataPoint in dataArray)
             {
                 Console.WriteLine($"{dataPoint.Key}: {dataPoint.Value}");
@@ -58,7 +58,7 @@ namespace PG_GUI
             foreach (var item in loadDurationCurve)
             {
                 Console.WriteLine($"Duration: {item.Duration}, Load: {item.Load}");
-            }
+            }*/
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
