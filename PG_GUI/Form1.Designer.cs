@@ -159,7 +159,7 @@
             this.btnProducts.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnProducts.Size = new System.Drawing.Size(200, 60);
             this.btnProducts.TabIndex = 1;
-            this.btnProducts.Text = "Products";
+            this.btnProducts.Text = "Insert Load Detail ";
             this.btnProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProducts.UseVisualStyleBackColor = true;
             this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
