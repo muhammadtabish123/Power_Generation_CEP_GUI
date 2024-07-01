@@ -188,20 +188,20 @@ namespace PG_GUI.Forms
             double steamAnnualInterestDepreciationOnly = steamInterestDepreciation * steamCapitalCostOnly;
             double steamOperatingCostOnly = steamOperatingCostPerKWh * unitsGeneratedPerAnnum;
             double steamTransmissionCostOnly = steamTransmissionCostPerKWh * unitsGeneratedPerAnnum;
-            double steamTotalAnnualCostOnly = steamAnnualInterestDepreciationOnly + steamOperatingCostOnly;
+            double steamTotalAnnualCostOnly = steamAnnualInterestDepreciationOnly + steamOperatingCostOnly + steamTransmissionCostOnly;
             double overallCostPerKWhSteamOnly = steamTotalAnnualCostOnly / unitsGeneratedPerAnnum;
             double anualOilConsumption = unitsGeneratedPerAnnum/unitsGeneratedPerKgOfOil;//for de
             SteamCostOfFuelPerMetricTon = SteamCostOfFuelPerMetricTon * (float)anualOilConsumption;
 
-            /*double steamFixedCost = steamAnnualInterestDepreciationOnly + steamTransmissionCostOnly;
-            double steamVariableCost = steamOperatingCostOnly + SteamCostOfFuelPerMetricTon;*/
+            double steamFixedCost = steamAnnualInterestDepreciationOnly + steamTransmissionCostOnly;
+            double steamVariableCost = steamOperatingCostOnly + SteamCostOfFuelPerMetricTon;
 
             Console.WriteLine($"Steam Only Cost per kWh: {overallCostPerKWhSteamOnly} Rs");
 
             labelSteamOnlyCost.Text = $"{(int)overallCostPerKWhSteamOnly} Rs";
-           /* labelSteamFuelCost.Text = $"{(int)steamFixedCost} Rs";
+            labelSteamFuelCost.Text = $"{(int)steamFixedCost} Rs";
             labelSteamFixedCost.Text = $"{(int)steamVariableCost} Rs";
-            labelSteamVariableCost.Text = $"{(int)SteamCostOfFuelPerMetricTon} Rs";*/
+            labelSteamVariableCost.Text = $"{(int)SteamCostOfFuelPerMetricTon} Rs";
 
         }
 
@@ -230,7 +230,13 @@ namespace PG_GUI.Forms
             double hydroTotalAnnualCostOnly = hydroAnnualInterestDepreciationOnly + hydroOperatingCostOnly + hydroTransmissionCostOnly;
             double overallCostPerKWhHydroOnly = hydroTotalAnnualCostOnly / unitsGeneratedPerAnnum;
             Console.WriteLine($"Hydro Only Cost per kWh: {overallCostPerKWhHydroOnly} Rs");
+
+            double HydroFixedCost = hydroAnnualInterestDepreciationOnly + hydroTransmissionCostOnly;
+            double HydroVariableCost = hydroOperatingCostOnly;
+
             labelHydroOnlyCost1.Text = $"{(int)overallCostPerKWhHydroOnly} Rs";
+            HfixedCost.Text = $"{(int)HydroFixedCost} Rs";
+            HVariableCost.Text = $"{(int)HydroVariableCost} Rs";
 
         }
 

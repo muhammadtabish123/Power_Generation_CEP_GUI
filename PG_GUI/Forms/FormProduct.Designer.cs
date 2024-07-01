@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -91,12 +91,10 @@
             this.label30 = new System.Windows.Forms.Label();
             this.labelSteamFixedCost = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.HfixedCost = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.HVariableCost = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,17 +183,17 @@
             // chart1
             // 
             this.chart1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(-186, 408);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.MarkerSize = 10;
-            series2.Name = "Load Duration Curve";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.MarkerSize = 10;
+            series1.Name = "Load Duration Curve";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(546, 295);
             this.chart1.TabIndex = 14;
             this.chart1.Text = "chart1";
@@ -687,13 +685,13 @@
             this.label31.TabIndex = 64;
             this.label31.Text = "Fixed Cost";
             // 
-            // textBox1
+            // HfixedCost
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(852, 430);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 71;
+            this.HfixedCost.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.HfixedCost.Location = new System.Drawing.Point(852, 430);
+            this.HfixedCost.Name = "HfixedCost";
+            this.HfixedCost.Size = new System.Drawing.Size(100, 20);
+            this.HfixedCost.TabIndex = 71;
             // 
             // label32
             // 
@@ -705,13 +703,13 @@
             this.label32.TabIndex = 70;
             this.label32.Text = "Fixed Cost";
             // 
-            // textBox2
+            // HVariableCost
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.Location = new System.Drawing.Point(852, 466);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 69;
+            this.HVariableCost.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.HVariableCost.Location = new System.Drawing.Point(852, 466);
+            this.HVariableCost.Name = "HVariableCost";
+            this.HVariableCost.Size = new System.Drawing.Size(100, 20);
+            this.HVariableCost.TabIndex = 69;
             // 
             // label33
             // 
@@ -723,35 +721,15 @@
             this.label33.TabIndex = 68;
             this.label33.Text = "Variable Cost";
             // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox3.Location = new System.Drawing.Point(852, 390);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 67;
-            // 
-            // label34
-            // 
-            this.label34.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(729, 397);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(65, 13);
-            this.label34.TabIndex = 66;
-            this.label34.Text = "Cost Of Fuel";
-            // 
             // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 687);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.HfixedCost);
             this.Controls.Add(this.label32);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.HVariableCost);
             this.Controls.Add(this.label33);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label34);
             this.Controls.Add(this.labelSteamFixedCost);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.labelSteamVariableCost);
@@ -883,11 +861,9 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox labelSteamFixedCost;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox HfixedCost;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox HVariableCost;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label34;
     }
 }
