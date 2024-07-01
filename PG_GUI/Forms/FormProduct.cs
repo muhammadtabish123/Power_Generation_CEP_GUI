@@ -7,6 +7,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using ExcelDataReader;
 using System.IO;
 using System.Linq;
+using ExcelDataReader.Log;
 
 namespace PG_GUI.Forms
 {
@@ -202,7 +203,8 @@ namespace PG_GUI.Forms
             labelSteamFuelCost.Text = $"{(int)steamFixedCost} Rs";
             labelSteamFixedCost.Text = $"{(int)steamVariableCost} Rs";
             labelSteamVariableCost.Text = $"{(int)SteamCostOfFuelPerMetricTon} Rs";
-
+            GreenHousegas.Text = $"CO₂: 70-80% of total emissions.\r\nCH₄: <1% of total emissions.\r\nN₂O: <1% of total emissions.";
+            Sustainable.Text = $"High CO₂ emissions, air pollution (SO₂, NOx, particulates),\n ecosystem damage from mining\n and high water consumption,\n resulting in low Sustainability.";
         }
 
         private void CalculateCostsHydro()
@@ -237,6 +239,8 @@ namespace PG_GUI.Forms
             labelHydroOnlyCost1.Text = $"{(int)overallCostPerKWhHydroOnly} Rs";
             HfixedCost.Text = $"{(int)HydroFixedCost} Rs";
             HVariableCost.Text = $"{(int)HydroVariableCost} Rs";
+            HGreenHouse.Text = $"Hydropower plants emit CO₂ and methane in low quantities.";
+            HSustainability.Text = $"Renewable Nature: Hydropower is renewable and emits\n significantly fewer greenhouse gases than fossil fuel\n plants.\r\n\r\nEnvironmental Impacts: Concerns include habitat disruption \nand altered river flows due to dam construction and operation.\r\n\r\nClimate Change Mitigation: Hydropower contributes to mitigating climate \nchange by displacing more carbon-intensive forms of electricity generation.";
 
         }
 
@@ -468,6 +472,11 @@ namespace PG_GUI.Forms
         }
 
         private void fixedCost_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Sustainable_Click(object sender, EventArgs e)
         {
 
         }

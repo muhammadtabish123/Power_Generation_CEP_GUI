@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -95,6 +95,10 @@
             this.label32 = new System.Windows.Forms.Label();
             this.HVariableCost = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
+            this.GreenHousegas = new System.Windows.Forms.Label();
+            this.Sustainable = new System.Windows.Forms.Label();
+            this.HSustainability = new System.Windows.Forms.Label();
+            this.HGreenHouse = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,17 +187,17 @@
             // chart1
             // 
             this.chart1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(-186, 408);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.MarkerSize = 10;
-            series1.Name = "Load Duration Curve";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.MarkerSize = 10;
+            series2.Name = "Load Duration Curve";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(546, 295);
             this.chart1.TabIndex = 14;
             this.chart1.Text = "chart1";
@@ -595,6 +599,7 @@
             // 
             // Kwhinyear
             // 
+            this.Kwhinyear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Kwhinyear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Kwhinyear.Location = new System.Drawing.Point(523, 51);
             this.Kwhinyear.Name = "Kwhinyear";
@@ -603,6 +608,7 @@
             // 
             // label27
             // 
+            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.Location = new System.Drawing.Point(376, 51);
@@ -721,11 +727,60 @@
             this.label33.TabIndex = 68;
             this.label33.Text = "Variable Cost";
             // 
+            // GreenHousegas
+            // 
+            this.GreenHousegas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.GreenHousegas.AutoSize = true;
+            this.GreenHousegas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GreenHousegas.Location = new System.Drawing.Point(366, 559);
+            this.GreenHousegas.Name = "GreenHousegas";
+            this.GreenHousegas.Size = new System.Drawing.Size(13, 17);
+            this.GreenHousegas.TabIndex = 72;
+            this.GreenHousegas.Text = "-";
+            // 
+            // Sustainable
+            // 
+            this.Sustainable.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Sustainable.AutoSize = true;
+            this.Sustainable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sustainable.Location = new System.Drawing.Point(366, 647);
+            this.Sustainable.Name = "Sustainable";
+            this.Sustainable.Size = new System.Drawing.Size(13, 17);
+            this.Sustainable.TabIndex = 73;
+            this.Sustainable.Text = "-";
+            this.Sustainable.Click += new System.EventHandler(this.Sustainable_Click);
+            // 
+            // HSustainability
+            // 
+            this.HSustainability.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.HSustainability.AutoSize = true;
+            this.HSustainability.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HSustainability.Location = new System.Drawing.Point(729, 647);
+            this.HSustainability.Name = "HSustainability";
+            this.HSustainability.Size = new System.Drawing.Size(13, 17);
+            this.HSustainability.TabIndex = 75;
+            this.HSustainability.Text = "-";
+            // 
+            // HGreenHouse
+            // 
+            this.HGreenHouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.HGreenHouse.AutoSize = true;
+            this.HGreenHouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HGreenHouse.Location = new System.Drawing.Point(729, 559);
+            this.HGreenHouse.Name = "HGreenHouse";
+            this.HGreenHouse.Size = new System.Drawing.Size(13, 17);
+            this.HGreenHouse.TabIndex = 74;
+            this.HGreenHouse.Text = "-";
+            // 
             // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 687);
+            this.Controls.Add(this.HSustainability);
+            this.Controls.Add(this.HGreenHouse);
+            this.Controls.Add(this.Sustainable);
+            this.Controls.Add(this.GreenHousegas);
             this.Controls.Add(this.HfixedCost);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.HVariableCost);
@@ -865,5 +920,9 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox HVariableCost;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label GreenHousegas;
+        private System.Windows.Forms.Label Sustainable;
+        private System.Windows.Forms.Label HSustainability;
+        private System.Windows.Forms.Label HGreenHouse;
     }
 }
