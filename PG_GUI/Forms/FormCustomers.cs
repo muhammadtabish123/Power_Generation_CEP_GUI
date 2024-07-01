@@ -37,5 +37,10 @@ namespace PG_GUI.Forms
             label4.ForeColor = ThemeColor.SecondaryColor;
             label5.ForeColor = ThemeColor.PrimaryColor;
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

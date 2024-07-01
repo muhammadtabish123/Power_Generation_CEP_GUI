@@ -24,6 +24,7 @@ namespace PG_GUI.Forms
             InitializeComponent();
             this.loadDurationCurve = loadDurationCurve; // Initialize the list
 
+
            /* // Load Excel data if not already loaded
             if (loadDurationCurve.Count == 0)
             {
@@ -48,6 +49,40 @@ namespace PG_GUI.Forms
             }*/
         }
 
+        private void LoadState()
+        {
+            loadDurationCurve = SharedState.LoadDurationCurve;
+            connected_load = SharedState.ConnectedLoad;
+            max_demand = SharedState.MaxDemand;
+            demand_factor = SharedState.DemandFactor;
+            average_load = SharedState.AverageLoad;
+            load_factor = SharedState.LoadFactor;
+            plant_capacity = SharedState.PlantCapacity;
+            plant_capacity_factor = SharedState.PlantCapacityFactor;
+
+            if (SharedState.LoadDurationCurveSeries != null)
+            {
+                chart1.Series.Clear();
+                chart1.Series.Add(SharedState.LoadDurationCurveSeries);
+            }
+        }
+
+        private void SaveState()
+        {
+            SharedState.LoadDurationCurve = loadDurationCurve;
+            SharedState.ConnectedLoad = connected_load;
+            SharedState.MaxDemand = max_demand;
+            SharedState.DemandFactor = demand_factor;
+            SharedState.AverageLoad = average_load;
+            SharedState.LoadFactor = load_factor;
+            SharedState.PlantCapacity = plant_capacity;
+            SharedState.PlantCapacityFactor = plant_capacity_factor;
+
+            if (chart1.Series.Count > 0)
+            {
+                SharedState.LoadDurationCurveSeries = chart1.Series["Voltage Regulation"];
+            }
+        }
         private void label4_Click(object sender, EventArgs e)
         {
             // Handle label click event
@@ -115,6 +150,9 @@ namespace PG_GUI.Forms
 
             // Update the chart
             chart1.Update();
+
+            // Save the state
+            SaveState();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -208,6 +246,9 @@ namespace PG_GUI.Forms
                 // Handle case where parsing CLoad.Text fails
                 MessageBox.Show("Invalid input for Connected Load.");
             }
+
+            // Save state
+           // SaveState();
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -221,6 +262,51 @@ namespace PG_GUI.Forms
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
         }
