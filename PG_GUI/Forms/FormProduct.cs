@@ -82,7 +82,7 @@ namespace PG_GUI.Forms
 
             if (chart1.Series.Count > 0)
             {
-                SharedState.LoadDurationCurveSeries = chart1.Series["Voltage Regulation"];
+                SharedState.LoadDurationCurveSeries = chart1.Series["Load Duration Curve"];
             }
         }
         private void label4_Click(object sender, EventArgs e)
@@ -109,6 +109,17 @@ namespace PG_GUI.Forms
             }
             label4.ForeColor = ThemeColor.SecondaryColor;
             label5.ForeColor = ThemeColor.PrimaryColor;
+            label9.ForeColor = ThemeColor.PrimaryColor;
+            //label11.ForeColor = ThemeColor.PrimaryColor;
+            label14.ForeColor = ThemeColor.PrimaryColor;
+            label19.ForeColor = ThemeColor.PrimaryColor;
+            label34.ForeColor = ThemeColor.PrimaryColor;
+            label35.ForeColor = ThemeColor.PrimaryColor;
+            label36.ForeColor = ThemeColor.PrimaryColor;
+            label37.ForeColor = ThemeColor.PrimaryColor;
+            label38.ForeColor = ThemeColor.PrimaryColor;
+            label39.ForeColor = ThemeColor.PrimaryColor;
+
         }
 
         private void chart1_Click(object sender, EventArgs e)
@@ -122,7 +133,7 @@ namespace PG_GUI.Forms
             chart1.Series.Clear();
 
             // Create a new chart series for the load duration curve
-            Series timeDurationCurveSeries = new Series("Voltage Regulation");
+            Series timeDurationCurveSeries = new Series("Load Duration Curve");
             timeDurationCurveSeries.ChartType = SeriesChartType.Spline; // Set the chart type to Spline
 
             // Initialize cumulative duration
@@ -204,7 +215,7 @@ namespace PG_GUI.Forms
             labelSteamFixedCost.Text = $"{(int)steamVariableCost} Rs";
             labelSteamVariableCost.Text = $"{(int)SteamCostOfFuelPerMetricTon} Rs";
             GreenHousegas.Text = $"CO₂: 70-80% of total emissions.\r\nCH₄: <1% of total emissions.\r\nN₂O: <1% of total emissions.";
-            Sustainable.Text = $"High CO₂ emissions, air pollution (SO₂, NOx, particulates),\n ecosystem damage from mining\n and high water consumption,\n resulting in low Sustainability.";
+            Sustainable.Text = $" High CO₂ emissions, air pollution (SO₂, NOx, particulates),\n ecosystem damage from mining\n and high water consumption,\n resulting in low Sustainability.";
         }
 
         private void CalculateCostsHydro()

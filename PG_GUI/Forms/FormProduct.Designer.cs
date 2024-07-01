@@ -99,6 +99,12 @@
             this.Sustainable = new System.Windows.Forms.Label();
             this.HSustainability = new System.Windows.Forms.Label();
             this.HGreenHouse = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -366,7 +372,7 @@
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(373, 6);
+            this.label14.Location = new System.Drawing.Point(374, 53);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(183, 25);
             this.label14.TabIndex = 24;
@@ -451,7 +457,7 @@
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(730, 6);
+            this.label19.Location = new System.Drawing.Point(732, 53);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(178, 25);
             this.label19.TabIndex = 33;
@@ -461,7 +467,7 @@
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(379, 324);
+            this.button2.Location = new System.Drawing.Point(386, 335);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(98, 34);
             this.button2.TabIndex = 42;
@@ -473,7 +479,7 @@
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(736, 324);
+            this.button4.Location = new System.Drawing.Point(724, 335);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(98, 34);
             this.button4.TabIndex = 43;
@@ -484,7 +490,7 @@
             // labelSteamOnlyCost
             // 
             this.labelSteamOnlyCost.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelSteamOnlyCost.Location = new System.Drawing.Point(498, 508);
+            this.labelSteamOnlyCost.Location = new System.Drawing.Point(503, 518);
             this.labelSteamOnlyCost.Name = "labelSteamOnlyCost";
             this.labelSteamOnlyCost.Size = new System.Drawing.Size(100, 20);
             this.labelSteamOnlyCost.TabIndex = 45;
@@ -494,7 +500,7 @@
             // 
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(375, 515);
+            this.label20.Location = new System.Drawing.Point(380, 525);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(97, 13);
             this.label20.TabIndex = 44;
@@ -503,7 +509,7 @@
             // labelHydroOnlyCost1
             // 
             this.labelHydroOnlyCost1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelHydroOnlyCost1.Location = new System.Drawing.Point(852, 512);
+            this.labelHydroOnlyCost1.Location = new System.Drawing.Point(852, 483);
             this.labelHydroOnlyCost1.Name = "labelHydroOnlyCost1";
             this.labelHydroOnlyCost1.Size = new System.Drawing.Size(100, 20);
             this.labelHydroOnlyCost1.TabIndex = 47;
@@ -513,7 +519,7 @@
             // 
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(729, 512);
+            this.label21.Location = new System.Drawing.Point(729, 483);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(97, 13);
             this.label21.TabIndex = 46;
@@ -563,7 +569,7 @@
             // plantCapacity_hydro
             // 
             this.plantCapacity_hydro.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.plantCapacity_hydro.Location = new System.Drawing.Point(852, 98);
+            this.plantCapacity_hydro.Location = new System.Drawing.Point(852, 106);
             this.plantCapacity_hydro.Name = "plantCapacity_hydro";
             this.plantCapacity_hydro.Size = new System.Drawing.Size(100, 20);
             this.plantCapacity_hydro.TabIndex = 53;
@@ -573,7 +579,7 @@
             // 
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(735, 105);
+            this.label25.Location = new System.Drawing.Point(734, 109);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(109, 13);
             this.label25.TabIndex = 52;
@@ -601,7 +607,7 @@
             // 
             this.Kwhinyear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Kwhinyear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Kwhinyear.Location = new System.Drawing.Point(523, 51);
+            this.Kwhinyear.Location = new System.Drawing.Point(580, 27);
             this.Kwhinyear.Name = "Kwhinyear";
             this.Kwhinyear.Size = new System.Drawing.Size(205, 23);
             this.Kwhinyear.TabIndex = 57;
@@ -611,7 +617,7 @@
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(376, 51);
+            this.label27.Location = new System.Drawing.Point(428, 30);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(146, 17);
             this.label27.TabIndex = 56;
@@ -639,7 +645,7 @@
             // labelSteamFuelCost
             // 
             this.labelSteamFuelCost.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelSteamFuelCost.Location = new System.Drawing.Point(498, 390);
+            this.labelSteamFuelCost.Location = new System.Drawing.Point(503, 400);
             this.labelSteamFuelCost.Name = "labelSteamFuelCost";
             this.labelSteamFuelCost.Size = new System.Drawing.Size(100, 20);
             this.labelSteamFuelCost.TabIndex = 61;
@@ -648,7 +654,7 @@
             // 
             this.label29.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(375, 397);
+            this.label29.Location = new System.Drawing.Point(380, 407);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(65, 13);
             this.label29.TabIndex = 60;
@@ -657,7 +663,7 @@
             // labelSteamVariableCost
             // 
             this.labelSteamVariableCost.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelSteamVariableCost.Location = new System.Drawing.Point(498, 466);
+            this.labelSteamVariableCost.Location = new System.Drawing.Point(503, 476);
             this.labelSteamVariableCost.Name = "labelSteamVariableCost";
             this.labelSteamVariableCost.Size = new System.Drawing.Size(100, 20);
             this.labelSteamVariableCost.TabIndex = 63;
@@ -666,7 +672,7 @@
             // 
             this.label30.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(375, 473);
+            this.label30.Location = new System.Drawing.Point(380, 483);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(69, 13);
             this.label30.TabIndex = 62;
@@ -675,7 +681,7 @@
             // labelSteamFixedCost
             // 
             this.labelSteamFixedCost.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelSteamFixedCost.Location = new System.Drawing.Point(498, 430);
+            this.labelSteamFixedCost.Location = new System.Drawing.Point(503, 440);
             this.labelSteamFixedCost.Name = "labelSteamFixedCost";
             this.labelSteamFixedCost.Size = new System.Drawing.Size(100, 20);
             this.labelSteamFixedCost.TabIndex = 65;
@@ -685,7 +691,7 @@
             // 
             this.label31.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(375, 437);
+            this.label31.Location = new System.Drawing.Point(380, 447);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(56, 13);
             this.label31.TabIndex = 64;
@@ -694,7 +700,7 @@
             // HfixedCost
             // 
             this.HfixedCost.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.HfixedCost.Location = new System.Drawing.Point(852, 430);
+            this.HfixedCost.Location = new System.Drawing.Point(852, 401);
             this.HfixedCost.Name = "HfixedCost";
             this.HfixedCost.Size = new System.Drawing.Size(100, 20);
             this.HfixedCost.TabIndex = 71;
@@ -703,7 +709,7 @@
             // 
             this.label32.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(729, 437);
+            this.label32.Location = new System.Drawing.Point(729, 408);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(56, 13);
             this.label32.TabIndex = 70;
@@ -712,7 +718,7 @@
             // HVariableCost
             // 
             this.HVariableCost.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.HVariableCost.Location = new System.Drawing.Point(852, 466);
+            this.HVariableCost.Location = new System.Drawing.Point(852, 437);
             this.HVariableCost.Name = "HVariableCost";
             this.HVariableCost.Size = new System.Drawing.Size(100, 20);
             this.HVariableCost.TabIndex = 69;
@@ -721,7 +727,7 @@
             // 
             this.label33.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(729, 473);
+            this.label33.Location = new System.Drawing.Point(729, 444);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(69, 13);
             this.label33.TabIndex = 68;
@@ -732,7 +738,7 @@
             this.GreenHousegas.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.GreenHousegas.AutoSize = true;
             this.GreenHousegas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GreenHousegas.Location = new System.Drawing.Point(366, 559);
+            this.GreenHousegas.Location = new System.Drawing.Point(366, 573);
             this.GreenHousegas.Name = "GreenHousegas";
             this.GreenHousegas.Size = new System.Drawing.Size(13, 17);
             this.GreenHousegas.TabIndex = 72;
@@ -743,7 +749,7 @@
             this.Sustainable.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Sustainable.AutoSize = true;
             this.Sustainable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sustainable.Location = new System.Drawing.Point(366, 647);
+            this.Sustainable.Location = new System.Drawing.Point(366, 670);
             this.Sustainable.Name = "Sustainable";
             this.Sustainable.Size = new System.Drawing.Size(13, 17);
             this.Sustainable.TabIndex = 73;
@@ -755,7 +761,7 @@
             this.HSustainability.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.HSustainability.AutoSize = true;
             this.HSustainability.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HSustainability.Location = new System.Drawing.Point(729, 647);
+            this.HSustainability.Location = new System.Drawing.Point(729, 664);
             this.HSustainability.Name = "HSustainability";
             this.HSustainability.Size = new System.Drawing.Size(13, 17);
             this.HSustainability.TabIndex = 75;
@@ -772,11 +778,83 @@
             this.HGreenHouse.TabIndex = 74;
             this.HGreenHouse.Text = "-";
             // 
+            // label34
+            // 
+            this.label34.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(378, 377);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(126, 20);
+            this.label34.TabIndex = 76;
+            this.label34.Text = "Generation Cost";
+            // 
+            // label35
+            // 
+            this.label35.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(373, 539);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(148, 20);
+            this.label35.TabIndex = 77;
+            this.label35.Text = "Envirnmental Effect";
+            // 
+            // label36
+            // 
+            this.label36.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(375, 644);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(102, 20);
+            this.label36.TabIndex = 78;
+            this.label36.Text = "Sustainability";
+            // 
+            // label37
+            // 
+            this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(728, 539);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(148, 20);
+            this.label37.TabIndex = 79;
+            this.label37.Text = "Envirnmental Effect";
+            // 
+            // label38
+            // 
+            this.label38.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(728, 371);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(126, 20);
+            this.label38.TabIndex = 80;
+            this.label38.Text = "Generation Cost";
+            // 
+            // label39
+            // 
+            this.label39.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(728, 644);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(102, 20);
+            this.label39.TabIndex = 81;
+            this.label39.Text = "Sustainability";
+            // 
             // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 687);
+            this.ClientSize = new System.Drawing.Size(964, 703);
+            this.Controls.Add(this.label39);
+            this.Controls.Add(this.label38);
+            this.Controls.Add(this.label37);
+            this.Controls.Add(this.label36);
+            this.Controls.Add(this.label35);
+            this.Controls.Add(this.label34);
             this.Controls.Add(this.HSustainability);
             this.Controls.Add(this.HGreenHouse);
             this.Controls.Add(this.Sustainable);
@@ -924,5 +1002,11 @@
         private System.Windows.Forms.Label Sustainable;
         private System.Windows.Forms.Label HSustainability;
         private System.Windows.Forms.Label HGreenHouse;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label39;
     }
 }
