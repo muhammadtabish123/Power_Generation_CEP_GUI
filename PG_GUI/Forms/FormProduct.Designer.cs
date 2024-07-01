@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,23 +69,27 @@
             this.label19 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.labelSteamOnlyCost = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.labelHydroOnlyCost1 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.plantCapacity_steam = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.plantCapacity_hydro = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
+            this.Kwhenergy = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.Kwhinyear = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(12, 686);
+            this.button1.Location = new System.Drawing.Point(15, 714);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 34);
             this.button1.TabIndex = 0;
@@ -146,7 +150,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(7, 339);
+            this.label4.Location = new System.Drawing.Point(10, 367);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(249, 25);
             this.label4.TabIndex = 9;
@@ -167,17 +171,17 @@
             // chart1
             // 
             this.chart1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(-189, 380);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(-186, 408);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.MarkerSize = 10;
-            series1.Name = "Load Duration Curve";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.MarkerSize = 10;
+            series2.Name = "Load Duration Curve";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(546, 295);
             this.chart1.TabIndex = 14;
             this.chart1.Text = "chart1";
@@ -446,6 +450,7 @@
             this.button2.TabIndex = 42;
             this.button2.Text = "Calculate ";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button4
             // 
@@ -457,14 +462,16 @@
             this.button4.TabIndex = 43;
             this.button4.Text = "Calculate ";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // textBox9
+            // labelSteamOnlyCost
             // 
-            this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox9.Location = new System.Drawing.Point(499, 399);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 45;
+            this.labelSteamOnlyCost.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelSteamOnlyCost.Location = new System.Drawing.Point(499, 399);
+            this.labelSteamOnlyCost.Name = "labelSteamOnlyCost";
+            this.labelSteamOnlyCost.Size = new System.Drawing.Size(100, 20);
+            this.labelSteamOnlyCost.TabIndex = 45;
+            this.labelSteamOnlyCost.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // label20
             // 
@@ -476,13 +483,14 @@
             this.label20.TabIndex = 44;
             this.label20.Text = "Over All Cost/KWh";
             // 
-            // textBox10
+            // labelHydroOnlyCost1
             // 
-            this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox10.Location = new System.Drawing.Point(856, 399);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 47;
+            this.labelHydroOnlyCost1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelHydroOnlyCost1.Location = new System.Drawing.Point(856, 399);
+            this.labelHydroOnlyCost1.Name = "labelHydroOnlyCost1";
+            this.labelHydroOnlyCost1.Size = new System.Drawing.Size(100, 20);
+            this.labelHydroOnlyCost1.TabIndex = 47;
+            this.labelHydroOnlyCost1.TextChanged += new System.EventHandler(this.labelSteamOnlyCost_TextChanged);
             // 
             // label21
             // 
@@ -499,7 +507,7 @@
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(373, 53);
+            this.label22.Location = new System.Drawing.Point(375, 77);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(201, 17);
             this.label22.TabIndex = 48;
@@ -510,62 +518,104 @@
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(732, 53);
+            this.label23.Location = new System.Drawing.Point(734, 77);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(201, 17);
             this.label23.TabIndex = 49;
             this.label23.Text = "Steam Power Efficiency is 90%";
             // 
-            // textBox11
+            // plantCapacity_steam
             // 
-            this.textBox11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox11.Location = new System.Drawing.Point(496, 81);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 51;
+            this.plantCapacity_steam.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.plantCapacity_steam.Location = new System.Drawing.Point(498, 105);
+            this.plantCapacity_steam.Name = "plantCapacity_steam";
+            this.plantCapacity_steam.Size = new System.Drawing.Size(100, 20);
+            this.plantCapacity_steam.TabIndex = 51;
+            this.plantCapacity_steam.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label24
             // 
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(373, 81);
+            this.label24.Location = new System.Drawing.Point(375, 105);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(78, 13);
             this.label24.TabIndex = 50;
             this.label24.Text = "Plant Capacity ";
             // 
-            // textBox12
+            // plantCapacity_hydro
             // 
-            this.textBox12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox12.Location = new System.Drawing.Point(856, 81);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 53;
+            this.plantCapacity_hydro.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.plantCapacity_hydro.Location = new System.Drawing.Point(858, 105);
+            this.plantCapacity_hydro.Name = "plantCapacity_hydro";
+            this.plantCapacity_hydro.Size = new System.Drawing.Size(100, 20);
+            this.plantCapacity_hydro.TabIndex = 53;
+            this.plantCapacity_hydro.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
             // label25
             // 
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(733, 81);
+            this.label25.Location = new System.Drawing.Point(735, 105);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(78, 13);
             this.label25.TabIndex = 52;
             this.label25.Text = "Plant Capacity ";
+            // 
+            // Kwhenergy
+            // 
+            this.Kwhenergy.Location = new System.Drawing.Point(141, 335);
+            this.Kwhenergy.Name = "Kwhenergy";
+            this.Kwhenergy.Size = new System.Drawing.Size(100, 20);
+            this.Kwhenergy.TabIndex = 55;
+            this.Kwhenergy.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(18, 335);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(107, 13);
+            this.label26.TabIndex = 54;
+            this.label26.Text = "KWh Energy in a day";
+            this.label26.Click += new System.EventHandler(this.label26_Click);
+            // 
+            // Kwhinyear
+            // 
+            this.Kwhinyear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Kwhinyear.Location = new System.Drawing.Point(523, 51);
+            this.Kwhinyear.Name = "Kwhinyear";
+            this.Kwhinyear.Size = new System.Drawing.Size(205, 23);
+            this.Kwhinyear.TabIndex = 57;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(376, 51);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(146, 17);
+            this.label27.TabIndex = 56;
+            this.label27.Text = "KWh Energy in a year";
             // 
             // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 687);
-            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.Kwhinyear);
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.Kwhenergy);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.plantCapacity_hydro);
             this.Controls.Add(this.label25);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.plantCapacity_steam);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.labelHydroOnlyCost1);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.labelSteamOnlyCost);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
@@ -654,15 +704,19 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox labelSteamOnlyCost;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox labelHydroOnlyCost1;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox plantCapacity_steam;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox plantCapacity_hydro;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox Kwhenergy;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox Kwhinyear;
+        private System.Windows.Forms.Label label27;
     }
 }
