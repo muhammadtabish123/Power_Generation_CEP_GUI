@@ -148,5 +148,26 @@
   <ItemGroup>
     <None Include="Resources\Screenshot_4.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Screenshot_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Screenshot_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Screenshot_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Screenshot_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Screenshot_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Screenshot_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="beab6973-410d-46bb-aa90-8f4435a22877.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

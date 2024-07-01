@@ -345,16 +345,16 @@ namespace PG_GUI.Forms
                 DemandFcator_2.Text = demand_factor.ToString();
                 PlantCapacity_1.Text = $"{plant_capacity} KW";
                 PlantCapacityFactor_1.Text = plant_capacity_factor.ToString();
-                Kwhenergy.Text = auc.ToString();
+                Kwhenergy.Text = $"{auc} KWh";
 
                 auc_1year = auc * 356;
-                Kwhinyear.Text = auc_1year.ToString();
+                Kwhinyear.Text = $"{auc_1year} KWh";
 
                 plant_capacity_S = plant_capacity + plant_capacity*0.65f;
-                plantCapacity_steam.Text = plant_capacity_S.ToString();
+                plantCapacity_steam.Text = $"{plant_capacity_S} KW";
 
                 plant_capacity_H = plant_capacity + plant_capacity * 0.10f;
-                plantCapacity_hydro.Text = plant_capacity_H.ToString();
+                plantCapacity_hydro.Text = $"{plant_capacity_H} KW";
             }
             else
             {

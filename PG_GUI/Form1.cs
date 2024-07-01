@@ -146,27 +146,47 @@ namespace PG_GUI
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormOrders(), sender);
+            // OpenChildForm(new Forms.FormOrders(), sender);
+            if (activeForm != null)
+               // activeForm.Close();
+            ActivateButton(sender);
+           // activeForm = childForm;
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormCustomers(), sender);
+            // OpenChildForm(new Forms.FormCustomers(), sender);
+            if (activeForm != null)
+                // activeForm.Close();
+                ActivateButton(sender);
+            // activeForm = childForm;
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormReporting(), sender);
+            //OpenChildForm(new Forms.FormReporting(), sender);
+            if (activeForm != null)
+                // activeForm.Close();
+                ActivateButton(sender);
+            // activeForm = childForm;
         }
 
         private void btnNotifications_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormNotifications(), sender);
+            //OpenChildForm(new Forms.FormNotifications(), sender);
+            if (activeForm != null)
+                // activeForm.Close();
+                ActivateButton(sender);
+            // activeForm = childForm;
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormSetting(), sender);
+            //OpenChildForm(new Forms.FormSetting(), sender);
+            if (activeForm != null)
+                // activeForm.Close();
+                ActivateButton(sender);
+            // activeForm = childForm;
         }
 
         private void btnCloseChildForm_Click(object sender, EventArgs e)

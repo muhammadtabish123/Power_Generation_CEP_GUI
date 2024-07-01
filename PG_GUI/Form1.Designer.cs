@@ -44,12 +44,12 @@
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             this.panelDesktopPane.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -65,7 +65,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 581);
+            this.panelMenu.Size = new System.Drawing.Size(200, 710);
             this.panelMenu.TabIndex = 0;
             // 
             // btnSetting
@@ -95,7 +95,7 @@
             this.btnNotifications.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnNotifications.Size = new System.Drawing.Size(200, 60);
             this.btnNotifications.TabIndex = 5;
-            this.btnNotifications.Text = "Notifications";
+            this.btnNotifications.Text = "Tax Notifications";
             this.btnNotifications.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNotifications.UseVisualStyleBackColor = true;
             this.btnNotifications.Click += new System.EventHandler(this.btnNotifications_Click);
@@ -111,7 +111,7 @@
             this.btnReport.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnReport.Size = new System.Drawing.Size(200, 60);
             this.btnReport.TabIndex = 4;
-            this.btnReport.Text = "Report";
+            this.btnReport.Text = "Cost per Unit Report";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
@@ -127,7 +127,7 @@
             this.btnCustomers.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnCustomers.Size = new System.Drawing.Size(200, 60);
             this.btnCustomers.TabIndex = 3;
-            this.btnCustomers.Text = "Customers";
+            this.btnCustomers.Text = "Technical Parameters";
             this.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomers.UseVisualStyleBackColor = true;
             this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
@@ -143,7 +143,7 @@
             this.btnOrders.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnOrders.Size = new System.Drawing.Size(200, 60);
             this.btnOrders.TabIndex = 2;
-            this.btnOrders.Text = "Orders";
+            this.btnOrders.Text = "Generation Selection";
             this.btnOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrders.UseVisualStyleBackColor = true;
             this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
@@ -267,40 +267,43 @@
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(393, 31);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(78, 26);
+            this.lblTitle.Size = new System.Drawing.Size(187, 26);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "HOME";
+            this.lblTitle.Text = "Power Generation";
             this.lblTitle.Click += new System.EventHandler(this.label1_Click);
             // 
             // panelDesktopPane
             // 
             this.panelDesktopPane.BackColor = System.Drawing.Color.White;
-            this.panelDesktopPane.Controls.Add(this.pictureBox1);
+            this.panelDesktopPane.Controls.Add(this.pictureBox3);
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPane.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.panelDesktopPane.Location = new System.Drawing.Point(200, 80);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(884, 501);
+            this.panelDesktopPane.Size = new System.Drawing.Size(884, 630);
             this.panelDesktopPane.TabIndex = 2;
             this.panelDesktopPane.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktopPane_Paint);
             // 
-            // pictureBox1
+            // pictureBox3
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::PG_GUI.Properties.Resources.Screenshot_4;
-            this.pictureBox1.Location = new System.Drawing.Point(229, 117);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(391, 298);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox3.Image = global::PG_GUI.Properties.Resources.beab6973_410d_46bb_aa90_8f4435a22877;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(884, 630);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1084, 581);
+            this.ClientSize = new System.Drawing.Size(1084, 710);
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -316,7 +319,7 @@
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.panelDesktopPane.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,10 +339,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelDesktopPane;
         private System.Windows.Forms.Button btnCloseChildForm;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnMaximze;
         private System.Windows.Forms.Button bntMinimize;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 
