@@ -159,79 +159,78 @@ namespace PG_GUI.Forms
         private void CalculateCostsSteam()
         {
             // Constants
-            const double steamCapitalCostPerKW = 1250;
-            const double hydroCapitalCostPerKW = 2500;
-            const double steamInterestDepreciation = 0.12;
-            const double hydroInterestDepreciation = 0.10;
-            const double steamOperatingCostPerKWh = 0.05;
+           // const double steamCapitalCostPerKW = 1250;
 
-            const double hydroOperatingCostPerKWh = 0.015;
-            const double hydroTransmissionCostPerKWh = 0.002;
-            const double unitsGeneratedPerAnnum = 262.8 * 1e6; // 262.8 x 10^6 kWh
-            const double hydroUnitsGenerated = 100 * 1e6; // 100 x 10^6 kWh
-            const double hydroMaxOutputMW = 40; // 40 MW
+            //const double steamInterestDepreciation = 0.12;
 
-            // Steam and Hydro in Conjunction
-            double steamUnitsGenerated = unitsGeneratedPerAnnum - hydroUnitsGenerated;
-            double steamCapitalCost = 60 * 1e3 * steamCapitalCostPerKW;
-            double steamAnnualInterestDepreciation = steamInterestDepreciation * steamCapitalCost;
-            double steamOperatingCost = steamOperatingCostPerKWh * steamUnitsGenerated;
-            double steamTotalAnnualCost = steamAnnualInterestDepreciation + steamOperatingCost;
+            //const double steamOperatingCostPerKWh = 0.05;
 
-            double hydroCapitalCost = hydroMaxOutputMW * 1e3 * hydroCapitalCostPerKW;
-            double hydroAnnualInterestDepreciation = hydroInterestDepreciation * hydroCapitalCost;
-            double hydroOperatingCost = hydroOperatingCostPerKWh * hydroUnitsGenerated;
-            double hydroTransmissionCost = hydroTransmissionCostPerKWh * hydroUnitsGenerated;
-            double hydroTotalAnnualCost = hydroAnnualInterestDepreciation + hydroOperatingCost + hydroTransmissionCost;
+            double unitsGeneratedPerAnnum = 262.8 * 1e6; // 262.8 x 10^6 kWh
+            double unitsGeneratedPerKgOfOil = 3.6;
+            unitsGeneratedPerAnnum = auc_1year;
 
-            double totalAnnualCostConjunction = steamTotalAnnualCost + hydroTotalAnnualCost;
-            double overallCostPerKWhConjunction = totalAnnualCostConjunction / unitsGeneratedPerAnnum;
 
+            float steamCapitalCostPerKW = 0.0f;
+            float steamOperatingCostPerKWh = 0.0f;
+            float steamInterestDepreciation = 0.0f;
+            float steamTransmissionCostPerKWh = 0.0f;
+            float SteamCostOfFuelPerMetricTon;
+            float.TryParse(Capital.Text, out steamCapitalCostPerKW);
+            float.TryParse(Intrest.Text, out steamInterestDepreciation);
+            float.TryParse(Operating.Text, out steamOperatingCostPerKWh);
+            float.TryParse(Transmission.Text, out steamTransmissionCostPerKWh);//CostOfFuel
+            float.TryParse(CostOfFuel.Text, out SteamCostOfFuelPerMetricTon);
+            steamInterestDepreciation /= 100;
+            /*steamOperatingCostPerKWh /= 100;
+            steamTransmissionCostPerKWh /= 100;*/
             // Steam Only
-            double steamCapitalCostOnly = 100 * 1e3 * steamCapitalCostPerKW;
+            double steamCapitalCostOnly = max_demand * steamCapitalCostPerKW;
             double steamAnnualInterestDepreciationOnly = steamInterestDepreciation * steamCapitalCostOnly;
             double steamOperatingCostOnly = steamOperatingCostPerKWh * unitsGeneratedPerAnnum;
+            double steamTransmissionCostOnly = steamTransmissionCostPerKWh * unitsGeneratedPerAnnum;
             double steamTotalAnnualCostOnly = steamAnnualInterestDepreciationOnly + steamOperatingCostOnly;
             double overallCostPerKWhSteamOnly = steamTotalAnnualCostOnly / unitsGeneratedPerAnnum;
+            double anualOilConsumption = unitsGeneratedPerAnnum/unitsGeneratedPerKgOfOil;//for de
+            SteamCostOfFuelPerMetricTon = SteamCostOfFuelPerMetricTon * (float)anualOilConsumption;
 
-            // Hydro Only
-            double hydroCapitalCostOnly = 100 * 1e3 * hydroCapitalCostPerKW;
-            double hydroAnnualInterestDepreciationOnly = hydroInterestDepreciation * hydroCapitalCostOnly;
-            double hydroOperatingCostOnly = hydroOperatingCostPerKWh * unitsGeneratedPerAnnum;
-            double hydroTransmissionCostOnly = hydroTransmissionCostPerKWh * unitsGeneratedPerAnnum;
-            double hydroTotalAnnualCostOnly = hydroAnnualInterestDepreciationOnly + hydroOperatingCostOnly + hydroTransmissionCostOnly;
-            double overallCostPerKWhHydroOnly = hydroTotalAnnualCostOnly / unitsGeneratedPerAnnum;
+            /*double steamFixedCost = steamAnnualInterestDepreciationOnly + steamTransmissionCostOnly;
+            double steamVariableCost = steamOperatingCostOnly + SteamCostOfFuelPerMetricTon;*/
 
-            // Display Results
-            Console.WriteLine($"Steam and Hydro Conjunction Cost per kWh: {overallCostPerKWhConjunction * 100} paise");
-            Console.WriteLine($"Steam Only Cost per kWh: {overallCostPerKWhSteamOnly * 100} paise");
-            Console.WriteLine($"Hydro Only Cost per kWh: {overallCostPerKWhHydroOnly * 100} paise");
+            Console.WriteLine($"Steam Only Cost per kWh: {overallCostPerKWhSteamOnly} Rs");
 
-            // Optionally, display these results in the form's labels or textboxes
-            // Example:
-            // labelConjunctionCost.Text = $"{overallCostPerKWhConjunction * 100} paise";
-            labelSteamOnlyCost.Text = $"{overallCostPerKWhSteamOnly * 100} paise";
-            // labelHydroOnlyCost.Text = $"{overallCostPerKWhHydroOnly * 100} paise";
+            labelSteamOnlyCost.Text = $"{(int)overallCostPerKWhSteamOnly} Rs";
+           /* labelSteamFuelCost.Text = $"{(int)steamFixedCost} Rs";
+            labelSteamFixedCost.Text = $"{(int)steamVariableCost} Rs";
+            labelSteamVariableCost.Text = $"{(int)SteamCostOfFuelPerMetricTon} Rs";*/
+
         }
 
         private void CalculateCostsHydro()
         {
-            const double hydroCapitalCostPerKW = 2500;
-            const double hydroOperatingCostPerKWh = 0.015;
-            const double hydroInterestDepreciation = 0.10;
-            const double hydroTransmissionCostPerKWh = 0.002;
-            const double unitsGeneratedPerAnnum = 262.8 * 1e6; // 262.8 x 10^6 kWh
-            const double hydroUnitsGenerated = 100 * 1e6; // 100 x 10^6 kWh
-            const double hydroMaxOutputMW = 40; // 40 MW
+            float hydroCapitalCostPerKW = 0.0f;
+            float hydroOperatingCostPerKWh = 0.0f;
+            float hydroInterestDepreciation = 0.0f;
+            float hydroTransmissionCostPerKWh = 0.0f;
+
+            float.TryParse(capital_1.Text, out hydroCapitalCostPerKW);
+            float.TryParse(Intrest_2.Text, out hydroInterestDepreciation);
+            float.TryParse(Operating_1.Text, out hydroOperatingCostPerKWh);
+            float.TryParse(Transmission_1.Text, out hydroTransmissionCostPerKWh);
+
+            hydroInterestDepreciation /= 100;
+            /*hydroOperatingCostPerKWh /= 100;
+            hydroTransmissionCostPerKWh /= 100;*/
+            double unitsGeneratedPerAnnum = 262.8 * 1e6; // 262.8 x 10^6 kWh
+            unitsGeneratedPerAnnum = auc_1year;
             // Hydro Only
-            double hydroCapitalCostOnly = 100 * 1e3 * hydroCapitalCostPerKW;
+            double hydroCapitalCostOnly = max_demand * hydroCapitalCostPerKW;
             double hydroAnnualInterestDepreciationOnly = hydroInterestDepreciation * hydroCapitalCostOnly;
             double hydroOperatingCostOnly = hydroOperatingCostPerKWh * unitsGeneratedPerAnnum;
             double hydroTransmissionCostOnly = hydroTransmissionCostPerKWh * unitsGeneratedPerAnnum;
             double hydroTotalAnnualCostOnly = hydroAnnualInterestDepreciationOnly + hydroOperatingCostOnly + hydroTransmissionCostOnly;
             double overallCostPerKWhHydroOnly = hydroTotalAnnualCostOnly / unitsGeneratedPerAnnum;
-            Console.WriteLine($"Hydro Only Cost per kWh: {overallCostPerKWhHydroOnly * 100} paise");
-            labelHydroOnlyCost1.Text = $"{overallCostPerKWhHydroOnly * 100} paise";
+            Console.WriteLine($"Hydro Only Cost per kWh: {overallCostPerKWhHydroOnly} Rs");
+            labelHydroOnlyCost1.Text = $"{(int)overallCostPerKWhHydroOnly} Rs";
 
         }
 
@@ -299,7 +298,7 @@ namespace PG_GUI.Forms
                 load_factor = average_load / max_demand;
 
                 // Calculate plant capacity (assuming 80% factor as an example)
-                plant_capacity = max_demand / 0.8f;
+                plant_capacity = max_demand / (1000*0.8f);
 
                 // Calculate plant capacity factor
                 plant_capacity_factor = connected_load / plant_capacity;
@@ -311,7 +310,7 @@ namespace PG_GUI.Forms
                 Console.WriteLine($"Demand Factor: {demand_factor}");
                 Console.WriteLine($"Average Load: {average_load}");
                 Console.WriteLine($"Load Factor: {load_factor}");
-                Console.WriteLine($"Plant Capacity: {plant_capacity}");
+                Console.WriteLine($"Plant Capacity: {plant_capacity} KW" );
                 Console.WriteLine($"Plant Capacity Factor: {plant_capacity_factor}");
                 //calculated_line_efficiency.Text = line_efficiency.ToString();
                 // Calculate and display area under the curve
@@ -323,7 +322,7 @@ namespace PG_GUI.Forms
                 // Display results in TextBoxes (optional, if needed)
                 Loadfactor_1.Text = load_factor.ToString();
                 DemandFcator_2.Text = demand_factor.ToString();
-                PlantCapacity_1.Text = plant_capacity.ToString();
+                PlantCapacity_1.Text = $"{plant_capacity} KW";
                 PlantCapacityFactor_1.Text = plant_capacity_factor.ToString();
                 Kwhenergy.Text = auc.ToString();
 
@@ -448,6 +447,21 @@ namespace PG_GUI.Forms
         }
 
         private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CostOfFuel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fixedCost_TextChanged(object sender, EventArgs e)
         {
 
         }

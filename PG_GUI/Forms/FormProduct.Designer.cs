@@ -49,19 +49,19 @@
             this.PlantCapacity_1 = new System.Windows.Forms.TextBox();
             this.PlantCapacityFactor_1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Transmission = new System.Windows.Forms.TextBox();
+            this.Operating = new System.Windows.Forms.TextBox();
+            this.Intrest = new System.Windows.Forms.TextBox();
+            this.Capital = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.Transmission_1 = new System.Windows.Forms.TextBox();
+            this.Operating_1 = new System.Windows.Forms.TextBox();
+            this.Intrest_2 = new System.Windows.Forms.TextBox();
+            this.capital_1 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -83,6 +83,20 @@
             this.label26 = new System.Windows.Forms.Label();
             this.Kwhinyear = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
+            this.CostOfFuel = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.labelSteamFuelCost = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.labelSteamVariableCost = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.labelSteamFixedCost = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -265,41 +279,41 @@
             this.label9.TabIndex = 23;
             this.label9.Text = "Insert Load Profile";
             // 
-            // textBox1
+            // Transmission
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(582, 262);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 32;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.Transmission.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Transmission.Location = new System.Drawing.Point(582, 262);
+            this.Transmission.Name = "Transmission";
+            this.Transmission.Size = new System.Drawing.Size(100, 20);
+            this.Transmission.TabIndex = 32;
+            this.Transmission.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
-            // textBox2
+            // Operating
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.Location = new System.Drawing.Point(582, 230);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 31;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
+            this.Operating.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Operating.Location = new System.Drawing.Point(582, 230);
+            this.Operating.Name = "Operating";
+            this.Operating.Size = new System.Drawing.Size(100, 20);
+            this.Operating.TabIndex = 31;
+            this.Operating.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
-            // textBox3
+            // Intrest
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox3.Location = new System.Drawing.Point(582, 199);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 30;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged_1);
+            this.Intrest.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Intrest.Location = new System.Drawing.Point(582, 199);
+            this.Intrest.Name = "Intrest";
+            this.Intrest.Size = new System.Drawing.Size(100, 20);
+            this.Intrest.TabIndex = 30;
+            this.Intrest.TextChanged += new System.EventHandler(this.textBox3_TextChanged_1);
             // 
-            // textBox4
+            // Capital
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox4.Location = new System.Drawing.Point(582, 163);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 29;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged_1);
+            this.Capital.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Capital.Location = new System.Drawing.Point(582, 163);
+            this.Capital.Name = "Capital";
+            this.Capital.Size = new System.Drawing.Size(100, 20);
+            this.Capital.TabIndex = 29;
+            this.Capital.TextChanged += new System.EventHandler(this.textBox4_TextChanged_1);
             // 
             // label10
             // 
@@ -357,37 +371,38 @@
             this.label14.Text = "Steam Power Plant ";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
-            // textBox5
+            // Transmission_1
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox5.Location = new System.Drawing.Point(939, 262);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 41;
+            this.Transmission_1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Transmission_1.Location = new System.Drawing.Point(939, 262);
+            this.Transmission_1.Name = "Transmission_1";
+            this.Transmission_1.Size = new System.Drawing.Size(100, 20);
+            this.Transmission_1.TabIndex = 41;
             // 
-            // textBox6
+            // Operating_1
             // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox6.Location = new System.Drawing.Point(939, 230);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 40;
+            this.Operating_1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Operating_1.Location = new System.Drawing.Point(939, 230);
+            this.Operating_1.Name = "Operating_1";
+            this.Operating_1.Size = new System.Drawing.Size(100, 20);
+            this.Operating_1.TabIndex = 40;
             // 
-            // textBox7
+            // Intrest_2
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox7.Location = new System.Drawing.Point(939, 199);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 39;
+            this.Intrest_2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Intrest_2.Location = new System.Drawing.Point(939, 199);
+            this.Intrest_2.Name = "Intrest_2";
+            this.Intrest_2.Size = new System.Drawing.Size(100, 20);
+            this.Intrest_2.TabIndex = 39;
+            this.Intrest_2.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
-            // textBox8
+            // capital_1
             // 
-            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox8.Location = new System.Drawing.Point(939, 163);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 38;
+            this.capital_1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.capital_1.Location = new System.Drawing.Point(939, 163);
+            this.capital_1.Name = "capital_1";
+            this.capital_1.Size = new System.Drawing.Size(100, 20);
+            this.capital_1.TabIndex = 38;
             // 
             // label15
             // 
@@ -467,7 +482,7 @@
             // labelSteamOnlyCost
             // 
             this.labelSteamOnlyCost.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelSteamOnlyCost.Location = new System.Drawing.Point(499, 399);
+            this.labelSteamOnlyCost.Location = new System.Drawing.Point(498, 508);
             this.labelSteamOnlyCost.Name = "labelSteamOnlyCost";
             this.labelSteamOnlyCost.Size = new System.Drawing.Size(100, 20);
             this.labelSteamOnlyCost.TabIndex = 45;
@@ -477,7 +492,7 @@
             // 
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(376, 399);
+            this.label20.Location = new System.Drawing.Point(375, 515);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(97, 13);
             this.label20.TabIndex = 44;
@@ -486,7 +501,7 @@
             // labelHydroOnlyCost1
             // 
             this.labelHydroOnlyCost1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelHydroOnlyCost1.Location = new System.Drawing.Point(856, 399);
+            this.labelHydroOnlyCost1.Location = new System.Drawing.Point(852, 512);
             this.labelHydroOnlyCost1.Name = "labelHydroOnlyCost1";
             this.labelHydroOnlyCost1.Size = new System.Drawing.Size(100, 20);
             this.labelHydroOnlyCost1.TabIndex = 47;
@@ -496,7 +511,7 @@
             // 
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(733, 399);
+            this.label21.Location = new System.Drawing.Point(729, 512);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(97, 13);
             this.label21.TabIndex = 46;
@@ -527,7 +542,7 @@
             // plantCapacity_steam
             // 
             this.plantCapacity_steam.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.plantCapacity_steam.Location = new System.Drawing.Point(498, 105);
+            this.plantCapacity_steam.Location = new System.Drawing.Point(492, 102);
             this.plantCapacity_steam.Name = "plantCapacity_steam";
             this.plantCapacity_steam.Size = new System.Drawing.Size(100, 20);
             this.plantCapacity_steam.TabIndex = 51;
@@ -539,14 +554,14 @@
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(375, 105);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(78, 13);
+            this.label24.Size = new System.Drawing.Size(111, 13);
             this.label24.TabIndex = 50;
-            this.label24.Text = "Plant Capacity ";
+            this.label24.Text = "Steam Plant Capacity ";
             // 
             // plantCapacity_hydro
             // 
             this.plantCapacity_hydro.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.plantCapacity_hydro.Location = new System.Drawing.Point(858, 105);
+            this.plantCapacity_hydro.Location = new System.Drawing.Point(852, 98);
             this.plantCapacity_hydro.Name = "plantCapacity_hydro";
             this.plantCapacity_hydro.Size = new System.Drawing.Size(100, 20);
             this.plantCapacity_hydro.TabIndex = 53;
@@ -558,9 +573,9 @@
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(735, 105);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(78, 13);
+            this.label25.Size = new System.Drawing.Size(109, 13);
             this.label25.TabIndex = 52;
-            this.label25.Text = "Plant Capacity ";
+            this.label25.Text = "Hydro Plant Capacity ";
             // 
             // Kwhenergy
             // 
@@ -598,11 +613,153 @@
             this.label27.TabIndex = 56;
             this.label27.Text = "KWh Energy in a year";
             // 
+            // CostOfFuel
+            // 
+            this.CostOfFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.CostOfFuel.Location = new System.Drawing.Point(582, 293);
+            this.CostOfFuel.Name = "CostOfFuel";
+            this.CostOfFuel.Size = new System.Drawing.Size(100, 20);
+            this.CostOfFuel.TabIndex = 59;
+            this.CostOfFuel.TextChanged += new System.EventHandler(this.CostOfFuel_TextChanged);
+            // 
+            // label28
+            // 
+            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(383, 296);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(120, 13);
+            this.label28.TabIndex = 58;
+            this.label28.Text = "Cost of Fuel / metric ton";
+            // 
+            // labelSteamFuelCost
+            // 
+            this.labelSteamFuelCost.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelSteamFuelCost.Location = new System.Drawing.Point(498, 390);
+            this.labelSteamFuelCost.Name = "labelSteamFuelCost";
+            this.labelSteamFuelCost.Size = new System.Drawing.Size(100, 20);
+            this.labelSteamFuelCost.TabIndex = 61;
+            // 
+            // label29
+            // 
+            this.label29.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(375, 397);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(65, 13);
+            this.label29.TabIndex = 60;
+            this.label29.Text = "Cost Of Fuel";
+            // 
+            // labelSteamVariableCost
+            // 
+            this.labelSteamVariableCost.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelSteamVariableCost.Location = new System.Drawing.Point(498, 466);
+            this.labelSteamVariableCost.Name = "labelSteamVariableCost";
+            this.labelSteamVariableCost.Size = new System.Drawing.Size(100, 20);
+            this.labelSteamVariableCost.TabIndex = 63;
+            // 
+            // label30
+            // 
+            this.label30.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(375, 473);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(69, 13);
+            this.label30.TabIndex = 62;
+            this.label30.Text = "Variable Cost";
+            // 
+            // labelSteamFixedCost
+            // 
+            this.labelSteamFixedCost.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelSteamFixedCost.Location = new System.Drawing.Point(498, 430);
+            this.labelSteamFixedCost.Name = "labelSteamFixedCost";
+            this.labelSteamFixedCost.Size = new System.Drawing.Size(100, 20);
+            this.labelSteamFixedCost.TabIndex = 65;
+            this.labelSteamFixedCost.TextChanged += new System.EventHandler(this.fixedCost_TextChanged);
+            // 
+            // label31
+            // 
+            this.label31.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(375, 437);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(56, 13);
+            this.label31.TabIndex = 64;
+            this.label31.Text = "Fixed Cost";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox1.Location = new System.Drawing.Point(852, 430);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 71;
+            // 
+            // label32
+            // 
+            this.label32.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(729, 437);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(56, 13);
+            this.label32.TabIndex = 70;
+            this.label32.Text = "Fixed Cost";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox2.Location = new System.Drawing.Point(852, 466);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 69;
+            // 
+            // label33
+            // 
+            this.label33.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(729, 473);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(69, 13);
+            this.label33.TabIndex = 68;
+            this.label33.Text = "Variable Cost";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox3.Location = new System.Drawing.Point(852, 390);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 67;
+            // 
+            // label34
+            // 
+            this.label34.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(729, 397);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(65, 13);
+            this.label34.TabIndex = 66;
+            this.label34.Text = "Cost Of Fuel";
+            // 
             // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 687);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label32);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label33);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label34);
+            this.Controls.Add(this.labelSteamFixedCost);
+            this.Controls.Add(this.label31);
+            this.Controls.Add(this.labelSteamVariableCost);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.labelSteamFuelCost);
+            this.Controls.Add(this.label29);
+            this.Controls.Add(this.CostOfFuel);
+            this.Controls.Add(this.label28);
             this.Controls.Add(this.Kwhinyear);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.Kwhenergy);
@@ -619,19 +776,19 @@
             this.Controls.Add(this.label20);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.Transmission_1);
+            this.Controls.Add(this.Operating_1);
+            this.Controls.Add(this.Intrest_2);
+            this.Controls.Add(this.capital_1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.Transmission);
+            this.Controls.Add(this.Operating);
+            this.Controls.Add(this.Intrest);
+            this.Controls.Add(this.Capital);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
@@ -684,19 +841,19 @@
         private System.Windows.Forms.TextBox PlantCapacity_1;
         private System.Windows.Forms.TextBox PlantCapacityFactor_1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox Transmission;
+        private System.Windows.Forms.TextBox Operating;
+        private System.Windows.Forms.TextBox Intrest;
+        private System.Windows.Forms.TextBox Capital;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox Transmission_1;
+        private System.Windows.Forms.TextBox Operating_1;
+        private System.Windows.Forms.TextBox Intrest_2;
+        private System.Windows.Forms.TextBox capital_1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
@@ -718,5 +875,19 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox Kwhinyear;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox CostOfFuel;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox labelSteamFuelCost;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox labelSteamVariableCost;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox labelSteamFixedCost;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label34;
     }
 }
