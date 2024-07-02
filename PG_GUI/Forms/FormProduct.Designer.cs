@@ -154,8 +154,8 @@
             this.excel.Name = "excel";
             this.excel.Size = new System.Drawing.Size(164, 20);
             this.excel.TabIndex = 6;
-            this.excel.Text = "C:\\\\Users\\\\Admin\\\\Documents\\\\GitHub\\\\Power_Generation_CEP_GUI\\\\PG_GUI\\\\load_profi" +
-    "le.xlsx";
+            this.excel.Text = "C:\\\\Users\\\\Admin\\\\Documents\\\\GitHub\\\\Power_Generation_CEP_GUI\\\\PG_GUI\\\\Loadprofil" +
+    "e_2.xlsx";
             this.excel.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label2

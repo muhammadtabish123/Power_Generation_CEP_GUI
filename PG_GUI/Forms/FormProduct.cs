@@ -201,12 +201,12 @@ namespace PG_GUI.Forms
             double steamOperatingCostOnly = steamOperatingCostPerKWh * unitsGeneratedPerAnnum;
             double steamTransmissionCostOnly = steamTransmissionCostPerKWh * unitsGeneratedPerAnnum;
             double steamTotalAnnualCostOnly = steamAnnualInterestDepreciationOnly + steamOperatingCostOnly + steamTransmissionCostOnly;
-            double overallCostPerKWhSteamOnly = steamTotalAnnualCostOnly / unitsGeneratedPerAnnum;
+            double overallCostPerKWhSteamOnly = (steamTotalAnnualCostOnly / unitsGeneratedPerAnnum)/100.0f;
             double anualOilConsumption = unitsGeneratedPerAnnum/unitsGeneratedPerKgOfOil;//for de
             SteamCostOfFuelPerMetricTon = SteamCostOfFuelPerMetricTon * (float)anualOilConsumption;
 
-            double steamFixedCost = steamAnnualInterestDepreciationOnly + steamTransmissionCostOnly;
-            double steamVariableCost = steamOperatingCostOnly + SteamCostOfFuelPerMetricTon;
+            double steamFixedCost = (steamAnnualInterestDepreciationOnly + steamTransmissionCostOnly)/100.0f;
+            double steamVariableCost = (steamOperatingCostOnly + SteamCostOfFuelPerMetricTon)/100.0f;
 
             Console.WriteLine($"Steam Only Cost per kWh: {overallCostPerKWhSteamOnly} Rs");
 
@@ -241,11 +241,11 @@ namespace PG_GUI.Forms
             double hydroOperatingCostOnly = hydroOperatingCostPerKWh * unitsGeneratedPerAnnum;
             double hydroTransmissionCostOnly = hydroTransmissionCostPerKWh * unitsGeneratedPerAnnum;
             double hydroTotalAnnualCostOnly = hydroAnnualInterestDepreciationOnly + hydroOperatingCostOnly + hydroTransmissionCostOnly;
-            double overallCostPerKWhHydroOnly = hydroTotalAnnualCostOnly / unitsGeneratedPerAnnum;
+            double overallCostPerKWhHydroOnly = (hydroTotalAnnualCostOnly / unitsGeneratedPerAnnum)/100.0f;
             Console.WriteLine($"Hydro Only Cost per kWh: {overallCostPerKWhHydroOnly} Rs");
 
-            double HydroFixedCost = hydroAnnualInterestDepreciationOnly + hydroTransmissionCostOnly;
-            double HydroVariableCost = hydroOperatingCostOnly;
+            double HydroFixedCost = (hydroAnnualInterestDepreciationOnly + hydroTransmissionCostOnly)/100.0f;
+            double HydroVariableCost = hydroOperatingCostOnly/100.0f;
 
             labelHydroOnlyCost1.Text = $"{(int)overallCostPerKWhHydroOnly} Rs";
             HfixedCost.Text = $"{(int)HydroFixedCost} Rs";
@@ -318,11 +318,12 @@ namespace PG_GUI.Forms
                 // Calculate load factor
                 load_factor = average_load / max_demand;
 
-                // Calculate plant capacity (assuming 80% factor as an example)
-                plant_capacity = max_demand / (1000*0.8f);
+                plant_capacity = max_demand / 0.8f;
 
                 // Calculate plant capacity factor
                 plant_capacity_factor = connected_load / plant_capacity;
+                // Calculate plant capacity (assuming 80% factor as an example)
+                plant_capacity = max_demand / 1000;
 
                 // Print results to console
                 Console.WriteLine("Calculation Results:");
